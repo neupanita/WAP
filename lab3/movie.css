@@ -1,0 +1,124 @@
+body{
+        background-image: url("background.png");
+        font-family: Verdana, Tahoma, sans-serif;
+		font-size: 8pt;
+}
+
+.banner_background{
+    background-image: url("bannerbg.png");
+    text-align: center;
+    height: 50px;
+}
+
+h1{
+    text-align: center;
+    font-size: 24pt;
+    text-shadow: 0px 3px 3px #999999;
+}
+
+.footer-validator{
+    clear: both;
+}
+
+.container{
+    border: 4px solid gray;
+        border-radius: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 800px;
+    overflow: hidden;
+}
+
+.pull-left
+{
+	width: 550px;
+    float: left;
+}
+.pull-right
+{
+       width: 250px;
+    float: right;
+    background-color: #A2B964;
+}
+
+.rotton_image
+{
+	background-image: url(rbg.png);
+    height: 83px;
+    font-size: 48pt;
+    font-weight: bold;
+    color: red;
+	}
+	
+	.column-left
+	{
+		float: left;
+	}
+	
+	.column-right
+	{
+		float: right;
+		margin-left: 0px;
+	}
+	
+	.column-right, .column-left
+	{
+    width: 46%;
+    margin: 2%;
+}
+
+.review-box
+{
+	margin-bottom: 20pt;
+}
+
+.review {
+    border: 2px solid gray;
+    border-radius: 10px;
+    font-size: 8pt;
+    font-weight: bold;
+    background-color: #E8DC9B;
+    padding: 8px;
+    overflow: hidden;
+}
+
+
+.footer
+{
+	clear:both;
+	background-color: #A2B964;
+    text-align: center;
+    padding: 10.5px;
+    margin: 0px;
+}
+
+span {
+    vertical-align: top;
+}
+
+.italic {
+    font-style: italic;
+    padding: 35px;
+}
+
+#starrting dl{
+    padding: 10pt;
+    font-family: Arial;
+    font-size: 8pt;
+}
+#starrting dt {
+    font-weight: bold;
+}
+
+#starrting dd
+{
+	margin-bottom: 10pt;
+}
+
+.footer-validator
+{
+	bottom: 0px;
+    right: 0px;
+    position: fixed;
+    opacity: 0.5;
+}

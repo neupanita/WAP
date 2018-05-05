@@ -1,0 +1,64 @@
+/* 
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+"use strict";
+window.onload = myLoadFunction;
+function myLoadFunction() {
+    document.getElementById("startBtn").onclick = startAnimation;
+    document.getElementById("stopBtn").onclick = stopAnimation;
+    document.getElementById("dropdownAnim").onchange = dropdownSelect;
+    document.getElementById("sizeDropdown").onchange = sizeDropdown;
+    document.getElementById("turboSpeedCheck").onchange = turboSpeed;
+    document.getElementById("stopBtn").disabled=true;
+    
+}
+
+var timer = null;
+var index = 0;
+var textFieldData = null;
+function dropdownSelect() {
+    var dropdownListAnim = document.getElementById("dropdownAnim");
+    var dataAnim = ANIMATIONS[dropdownListAnim.value];
+    document.getElementById("textArea").value = dataAnim;
+}
+function startAnimation() {
+    textFieldData = document.getElementById("textArea").value;
+    timer = setInterval(animation,document.getElementById("turboSpeedCheck").checked?50:250);
+    document.getElementById("startBtn").disabled = true;
+    document.getElementById("stopBtn").disabled = false;
+    document.getElementById("dropdownAnim").disabled = true;
+}
+function animation() {
+    var dataAnimFrame = textFieldData.split("=====\n");
+    document.getElementById("textArea").value = dataAnimFrame[index++];
+    if (index > dataAnimFrame.length - 1) {
+        index = 0;
+    }
+}
+
+function stopAnimation() {
+    document.getElementById("startBtn").disabled = false;
+    document.getElementById("stopBtn").disabled = true;
+    document.getElementById("dropdownAnim").disabled = false;
+    clearInterval(timer);
+    timer = null;
+    dropdownSelect();
+}
+
+function sizeDropdown() {
+    document.getElementById("textArea").style.fontSize = document.getElementById("sizeDropdown").value;
+}
+function turboSpeed() {
+    console.log("sammy");
+    if (timer !== null) {
+        clearInterval(timer);
+        timer = null;
+        timer = setInterval(animation,document.getElementById("turboSpeedCheck").checked?50:250);
+    }
+}
+
+
+
+
